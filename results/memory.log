@@ -1,0 +1,19 @@
+loading /home/juhic/data.csv ...
+loaded 10000000 records in 2.1 s (key 8 B, payload 64 B)
+OS page size 4096 B -> node size 4096 B (overridden)
+leaf: 56 records/node (4048 of 4096 B used)   internal: 339 keys, fan-out 340 (4088 of 4096 B used)
+expected height: 4 if 100% full (bulk load), ~4 with random inserts (~69% full)
+[memory] inserting 10000000 records...
+[memory] 1000000 point lookups...
+[memory] verifying the whole tree...
+
+==== memory B+ tree, 10000000 records ====
+insert : 12.43 s total, 1.24 us/insert, 804692 inserts/s
+search : 3.099 us/lookup avg (p50 2.15, p99 5.59 us), found 1000000/1000000, payload mismatches 0
+miss   : 1.350 us/lookup for absent keys, 0 of 100000 found
+scan   : 2.7 us per 100-record range scan
+memory : index 1005.0 MB, RSS +1008.1 MB during build, peak RSS 1706.7 MB (incl. 686.6 MB dataset)
+disk   : 0.0 MB file (257097 pages)
+tree   : height 4  nodes per level: L3=1, L2=4, L1=1024, L0=256067
+         leaf fill 69.7%, internal fill 73.4%, verify OK
+results written to results/memory.json

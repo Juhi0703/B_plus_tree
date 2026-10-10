@@ -1,0 +1,4 @@
+build/
+*.db
+*.csv
+__pycache__/

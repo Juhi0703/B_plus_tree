@@ -1,0 +1,10 @@
+OS                        : Linux 6.6.87.2-microsoft-standard-WSL2 x86_64
+CPU                       : 13th Gen Intel(R) Core(TM) i5-13420H (12 logical CPUs)
+RAM                       : 8134012928 bytes
+memory page size          : 4096 bytes   <- B+ tree node size
+filesystem block size     : 4096 bytes (ext2/ext3 on /dev/sdd)
+disk logical/physical sec : 512 / 4096 bytes (rotational: 1)
+L1 cache line             : 64 bytes
+node capacities for key=8 B, payload=64 B:
+  leaf     = floor((4096 - 16) / (8 + 64)) = 56 records
+  internal = floor((4096 - 16 - 4) / (8 + 4)) = 339 keys -> fan-out 340

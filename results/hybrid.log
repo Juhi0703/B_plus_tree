@@ -1,0 +1,42 @@
+loading /home/juhic/data.csv ...
+loaded 10000000 records in 1.1 s (key 8 B, payload 64 B)
+OS page size 4096 B -> node size 4096 B (overridden)
+leaf: 56 records/node (4048 of 4096 B used)   internal: 339 keys, fan-out 340 (4088 of 4096 B used)
+expected height: 4 if 100% full (bulk load), ~4 with random inserts (~69% full)
+[hybrid] inserting 10000000 records...
+    5%      500000 records       0.5 s  height 3
+   10%     1000000 records      40.0 s  height 3
+   15%     1500000 records     142.9 s  height 3
+   20%     2000000 records     246.7 s  height 3
+   25%     2500000 records     328.1 s  height 3
+   30%     3000000 records     412.0 s  height 3
+   35%     3500000 records     505.0 s  height 4
+   40%     4000000 records     598.1 s  height 4
+   45%     4500000 records     713.7 s  height 4
+   50%     5000000 records     812.3 s  height 4
+   55%     5500000 records     903.2 s  height 4
+   60%     6000000 records     997.2 s  height 4
+   65%     6500000 records    1106.7 s  height 4
+   70%     7000000 records    1212.3 s  height 4
+   75%     7500000 records    1315.0 s  height 4
+   80%     8000000 records    1413.7 s  height 4
+   85%     8500000 records    1513.9 s  height 4
+   90%     9000000 records    1609.0 s  height 4
+   95%     9500000 records    1709.9 s  height 4
+  100%    10000000 records    1812.6 s  height 4
+[hybrid] 1000000 point lookups...
+[hybrid] verifying the whole tree...
+
+==== hybrid B+ tree, 10000000 records ====
+insert : 1812.55 s total, 181.26 us/insert, 5517 inserts/s
+         page reads 7591751 (0.76/insert), page writes 7832464 (0.78/insert), I/O time 1791.4 s; flush 0.99 s
+         buffer pool hit ratio 79.29% (internal 100.00%, leaf 24.08%)
+search : 131.615 us/lookup avg (p50 129.17, p99 273.01 us), found 1000000/1000000, payload mismatches 0
+         page reads 0.94/lookup, buffer pool hit ratio 76.52%
+miss   : 124.996 us/lookup for absent keys, 0 of 100000 found
+scan   : 443.4 us per 100-record range scan
+memory : index 65.4 MB, RSS +66.0 MB during build, peak RSS 763.7 MB (incl. 686.6 MB dataset)
+disk   : 1004.3 MB file (257097 pages), O_DIRECT
+tree   : height 4  nodes per level: L3=1, L2=4, L1=1024, L0=256067
+         leaf fill 69.7%, internal fill 73.4%, verify OK
+results written to results/hybrid.json
